@@ -248,7 +248,7 @@
                     </div>
                     <div class="float-end">
                         <p>Crafted with <span class="text-danger"><i class="bi bi-heart-fill icon-mid"></i></span>
-                            by <a href="si.unsada.ac.id">Your Name</a></p>
+                            by <a href="si.unsada.ac.id">WARRRR</a></p>
                     </div>
                 </div>
             </footer>
@@ -282,7 +282,7 @@
                     }).then(() => {
                         window.location.href = '{{ route('login') }}';
                     });
-                    
+
                 }).catch(error => {
                     console.log(error);
                     App.error('Gagal Logout' || 'Terjadi kesalahan saat logout.');
