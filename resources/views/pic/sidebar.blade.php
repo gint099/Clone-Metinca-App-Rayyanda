@@ -1,7 +1,13 @@
-<li class="sidebar-item active ">
-    <a href="index.html" class='sidebar-link'>
+<li class="sidebar-item {{ request()->routeIs('dashboard') ? 'active' : '' }}">
+    <a href="/dashboard" class='sidebar-link'>
         <i class="bi bi-grid-fill"></i>
-        <span>PIC</span>
+        <span>Dashboard</span>
+    </a>
+</li>
+<li class="sidebar-item {{ request()->routeIs('#') ? 'active' : '' }}">
+    <a href="{{ route('pic.item.index') }}" class='sidebar-link'>
+        <i class="bi bi-grid-fill"></i>
+        <span>Manage Item</span>
     </a>
 </li>
 <li class="sidebar-item  ">

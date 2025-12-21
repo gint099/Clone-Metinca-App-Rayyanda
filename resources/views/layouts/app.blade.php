@@ -108,11 +108,11 @@
                                     <div class="user-menu d-flex">
                                         <div class="user-name text-end me-3">
                                             <h6 class="mb-0 text-gray-600">{{ auth()->user()->name }}</h6>
-                                            <p class="mb-0 text-sm text-gray-600">Administrator</p>
+                                            <p class="mb-0 text-sm text-gray-600">hehe</p>
                                         </div>
                                         <div class="user-img d-flex align-items-center">
                                             <div class="avatar avatar-md">
-                                                <img src="./assets/compiled/jpg/1.jpg" />
+                                                <img src="{{ asset('./assets/compiled/jpg/1.jpg') }}" />
                                             </div>
                                         </div>
                                     </div>
@@ -128,8 +128,8 @@
                                             Profile</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="#"><i
-                                                class="icon-mid bi bi-gear me-2"></i> Settings</a>
+                                        <a class="dropdown-item" href="#"><i class="icon-mid bi bi-gear me-2"></i>
+                                            Settings</a>
                                     </li>
                                     <li>
                                         <a class="dropdown-item" href="#"><i
@@ -161,7 +161,7 @@
             <footer>
                 <div class="footer clearfix mb-0 text-muted">
                     <div class="float-start">
-                        <p>2025 &copy; Sistem Informasi Universitas Darma Persada</p>
+                        <p>2025 &copy; Sistem Informasi Universitas Darma Persada Bapuk</p>
                     </div>
                     <div class="float-end">
                         <p>Crafted with <span class="text-danger"><i class="bi bi-heart-fill icon-mid"></i></span>
@@ -175,12 +175,11 @@
     <script src="{{ asset('assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset('assets/compiled/js/app.js') }}"></script>
-     <!-- App JS -->
+    <!-- App JS -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
-
-        document.getElementById('formLogout').addEventListener('submit', function(e){
+        document.getElementById('formLogout').addEventListener('submit', function(e) {
             e.preventDefault();
             Swal.fire({
                 title: 'Yakin ingin logout?',
@@ -189,7 +188,7 @@
                 confirmButtonText: 'Ya, Logout',
                 cancelButtonText: 'Batal'
             }).then((result) => {
-                App.ajax('{{ route('logout') }}', 'POST',new FormData(this)).then(response => {
+                App.ajax('{{ route('logout') }}', 'POST', new FormData(this)).then(response => {
                     Swal.fire({
                         title: 'Berhasil!',
                         text: 'Anda telah logout.',
@@ -206,7 +205,6 @@
                 });
             });
         });
-
     </script>
     @stack('scripts')
     <!-- Need: Apexcharts -->
