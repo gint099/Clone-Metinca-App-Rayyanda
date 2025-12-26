@@ -9,8 +9,18 @@ class DashboardController extends Controller
     //
     public function dashboard()
     {
-        //load data disini jika perlu
+        $views = [
+            'admin' => 'admin.dashboard',
+            'quality-checker' => 'checker.dashboard',
+            'pic' => 'pic.dashboard',
+        ];
 
-        return view('dashboard');
+        $role = auth()->user()->role;
+
+        if (!isset($views[$role])) {
+            abort(403, 'Role tidak dikenal');
+        }
+
+        return view($views[$role]);
     }
 }
